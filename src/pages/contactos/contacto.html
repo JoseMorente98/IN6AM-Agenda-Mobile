@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>
+      Contactos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let contacto of contactos">
+    <ion-card-content>
+      <ion-card-title>
+        {{ contacto.nombre + " " + contacto.apellido }}
+      </ion-card-title>
+      <h4>{{ contacto.telefono }}</h4>
+      <h5>{{ contacto.correo }}</h5>
+      <ion-list>
+      <button ion-item (click)="viewForm(contacto.idContacto)">
+        Actualizar
+      </button>
+      <button ion-item (click)="borrarContacto(contacto.idContacto)">
+        Eliminar
+      </button>
+      </ion-list> 
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab right bottom>
+   <button ion-fab color="dark" (click)="viewForm('nuevo')">
+     <ion-icon name="md-add"></ion-icon>
+   </button>
+ </ion-fab>
+</ion-content>

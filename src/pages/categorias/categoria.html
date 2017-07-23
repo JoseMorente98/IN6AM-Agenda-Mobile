@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="red">
+    <ion-title>
+      Categorias
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let categoria of categorias">
+    <ion-card-content>
+      <ion-card-title>
+        {{ categoria.nombre}}
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab right bottom>
+   <button ion-fab color="red" >
+     <ion-icon name="md-add"></ion-icon>
+   </button>
+ </ion-fab>
+</ion-content>

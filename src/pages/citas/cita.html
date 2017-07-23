@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="red">
+    <ion-title>
+      Citas Personales
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let cita of citas">
+    <ion-card-content>
+      <ion-card-title>
+        {{ cita.nombre}}
+      </ion-card-title>
+      <h4> {{ cita.fechaCita }}</h4>
+      <p>{{ cita.descripcion }}</p>
+      <h5>Nombre: {{ cita.nombre }}</h5>
+      <h5>Apellido: {{ cita.apellido }}</h5>
+      <h6>Telefono: {{ cita.telefono }}</h6>
+      <ion-list>
+      <button ion-item (click)="viewForm(cita.idCita)">
+        Actualizar
+      </button>
+      <button ion-item (click)="borrarCita(cita.idCita)">
+        Eliminar
+      </button>
+      </ion-list> 
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab right bottom>
+   <button ion-fab color="dark" (click)="viewForm('nueva')">
+     <ion-icon name="md-add"></ion-icon>
+   </button>
+ </ion-fab>
+</ion-content>

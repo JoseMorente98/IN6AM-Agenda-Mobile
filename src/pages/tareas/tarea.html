@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="red">
+    <ion-title>
+      Tareas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let tarea of tareas">
+    <ion-card-content>
+      <ion-card-title>
+        {{ tarea.nombre}}
+      </ion-card-title>
+      <p>{{ tarea.descripcion }}</p>
+      <h5>{{ tarea.fechaRegistro }}</h5>
+      <h5>{{ tarea.fechaEntrega }}</h5>
+      <ion-list>
+      <button ion-item (click)="viewForm(tarea.idTarea)">
+        Actualizar
+      </button>
+      <button ion-item (click)="borrarTarea(tarea.idTarea)">
+        Eliminar
+      </button>
+      </ion-list> 
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab right bottom>
+   <button ion-fab color="dark" (click)="viewForm('nueva')">
+     <ion-icon name="md-add"></ion-icon>
+   </button>
+ </ion-fab>
+</ion-content>
