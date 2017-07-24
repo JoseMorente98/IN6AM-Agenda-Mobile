@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="red">
+  <ion-navbar>
     <ion-title>
       Citas Personales
     </ion-title>
@@ -19,9 +19,11 @@
       <h6>Telefono: {{ cita.telefono }}</h6>
       <ion-list>
       <button ion-item (click)="viewForm(cita.idCita)">
+        <ion-icon name="ios-arrow-dropright" item-start></ion-icon>
         Actualizar
       </button>
       <button ion-item (click)="borrarCita(cita.idCita)">
+        <ion-icon name="ios-trash-outline" item-start></ion-icon>
         Eliminar
       </button>
       </ion-list> 
@@ -29,7 +31,7 @@
   </ion-card>
 
   <ion-fab right bottom>
-   <button ion-fab color="dark" (click)="viewForm('nueva')">
+   <button ion-fab (click)="viewForm('nueva')">
      <ion-icon name="md-add"></ion-icon>
    </button>
  </ion-fab>

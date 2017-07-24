@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="dark">
+  <ion-navbar>
     <ion-title>
       Contactos
     </ion-title>
@@ -8,6 +8,7 @@
 
 <ion-content>
   <ion-card *ngFor="let contacto of contactos">
+    <img src="../../assets/images/contacto.jpeg"/>
     <ion-card-content>
       <ion-card-title>
         {{ contacto.nombre + " " + contacto.apellido }}
@@ -16,9 +17,11 @@
       <h5>{{ contacto.correo }}</h5>
       <ion-list>
       <button ion-item (click)="viewForm(contacto.idContacto)">
+        <ion-icon name="ios-arrow-dropright" item-start></ion-icon>
         Actualizar
       </button>
       <button ion-item (click)="borrarContacto(contacto.idContacto)">
+        <ion-icon name="ios-trash-outline" item-start></ion-icon>
         Eliminar
       </button>
       </ion-list> 
@@ -26,7 +29,7 @@
   </ion-card>
 
   <ion-fab right bottom>
-   <button ion-fab color="dark" (click)="viewForm('nuevo')">
+   <button ion-fab (click)="viewForm('nuevo')">
      <ion-icon name="md-add"></ion-icon>
    </button>
  </ion-fab>
